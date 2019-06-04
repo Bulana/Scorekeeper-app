@@ -1,7 +1,7 @@
 package com.bulana.scorekeeper;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mScoreText1 = (TextView) findViewById(R.id.score_1);
-        mScoreText2 = (TextView) findViewById(R.id.score_2);
+        mScoreText1 = findViewById(R.id.score_1);
+        mScoreText2 = findViewById(R.id.score_2);
     }
 
     public void decreaseScore(View view) {
         int viewID = view.getId();
-        switch (viewID){
+        switch (viewID) {
 
             case R.id.decreaseTeam1:
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void increaseScore(View view) {
         int viewID = view.getId();
-        switch (viewID){
+        switch (viewID) {
 
             case R.id.increaseTeam1:
 
