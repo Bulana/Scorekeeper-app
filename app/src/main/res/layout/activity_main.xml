@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
+        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -41,14 +42,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="Team 1"
-            android:textStyle="bold" />
+            android:text="Danny"
+            style="@style/TeamText" />
     </RelativeLayout>
 
     <RelativeLayout
+        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -84,10 +85,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:layout_centerHorizontal="true"
-            android:text="Team 2"
-            android:textStyle="bold" />
+            android:text="Kregan"
+            style="@style/TeamText" />
     </RelativeLayout>
 
 </LinearLayout>
