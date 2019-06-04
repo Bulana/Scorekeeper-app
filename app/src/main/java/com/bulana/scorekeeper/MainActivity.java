@@ -2,15 +2,25 @@ package com.bulana.scorekeeper;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
     private int mScore1;
     private int mScore2;
-
     private TextView mScoreText1;
     private TextView mScoreText2;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +63,27 @@ public class MainActivity extends AppCompatActivity {
                 mScore2++;
                 mScoreText2.setText(String.valueOf(mScore2));
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //Check if the correct item was clicked
+        if (item.getItemId() == R.id.night_mode) {
+            //Get the night mode state of the app
+            int nightMode = AppCompatDelegate.getDefaultNightMode();
+
+            //Set the theme mode for the restarted activity
+            if (nightMode == AppCompatDelegate.MODE_NIGHT_YES) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+
+            //Recreate the activity for the theme change to take effect
+            recreate();
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
